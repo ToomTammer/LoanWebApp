@@ -1,0 +1,340 @@
+﻿<link rel="stylesheet" href="~/css/FAQ4.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.form.validator.min.js"></script>
+<script src="security.js"></script>
+<script src="file.js"></script>
+<!-- {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var question = document.getElementById("question").value;
+
+        if (name != '' && email != '' && question != '') {
+            alert("All type of validation has done on OnSubmit event.");
+            return true;
+
+
+        }
+        else {
+            alert('Please correct the errors in the form!');
+            return false;
+        }-->
+<script type="text/javascript">function ValidationEvent() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var question = document.getElementById("question").value
+
+        if (name != '' && email != '' && question != '')
+
+
+        {
+            alret("ส่งคำถามเสร็จสมบูรณ์");
+            return true;
+
+        }
+        else
+        {
+
+            alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+            return false;
+
+
+        }
+
+
+    }</script>
+
+
+<script>function FirstQuestion() {
+        var x = document.getElementById("Q1");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function SecondQuestion() {
+        var x = document.getElementById("Q2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function ThirdQuestion() {
+        var x = document.getElementById("Q3");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function FourthQuestion() {
+        var x = document.getElementById("Q4");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function FifthQuestion() {
+        var x = document.getElementById("Q5");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function SixthQuestion() {
+        var x = document.getElementById("Q6");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }</script>
+
+
+
+
+<section class="nav-block"></section>
+<body class="body-FAQ">
+    <div class="jumbotron-fluid text-center body-container">
+        <div class="row" style="margin-bottom:70px;">
+            <div class="col-sm-1 block-1"></div>
+
+            <!--faq-->
+            <div class="col-sm-10 container-style">
+                <br />
+                <p>คำถามที่พบบ่อย</p>
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="FirstQuestion()">
+                        <p>
+                            1. เมื่อกดกู้เงินผ่านเว็บไซต์สำเร็จแล้วต้องดำเนินการอะไรอีกหรือไม่
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-sm-1 "> </div>
+                </div>
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q1">
+                        <p>
+                            เมื่อดำเนินการเสร็จแล้วจะมีรายละเอียดการกู้ยืมเงินส่งไปที่อีเมล์ของคุณ โดยคุณสามารถติดตามรายละเอียดเพิ่มเติมและดำเนินการต่อกับทางธนาคารได้ตามรายละเอียดต่างๆที่ส่งไปให้ทางอีเมล์
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="SecondQuestion()">
+                        <p>
+                            2. ในกรณีที่กู้ยืมเงินผ่านเว็บไซต์ไปแล้วแต่ต้องการจะยกเลิก ต้องทำอย่างไร
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q2">
+                        <p>
+                            ในกรณีที่ต้องการแก้ไขข้อมูลหรือยกเลิกการกู้ยืมเงินกับทางเว็บไซต์นั้นไม่สามารถทำได้ แต่คุณสามารถติดต่อกับเรามาโดยตรง หรือติดต่อทางธนาคารเพื่อแจ้งรายละเอียดเกี่ยวกับการต้องการขอยกเลิกการกู้ยืมเงิน โดยการยกเลิกการกู้ยืมนั้นอาจเป็นไปได้ยาก ขึ้นอยู่กับเหตุผลที่ใช้ประกอบกับการพิจารณา
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+
+
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="ThirdQuestion()">
+                        <p>
+                            3. ถ้าเกิดปัญหาระหว่างการดำเนินการกู้ยืมผ่านเว็บไซต์ ต้องทำอย่างไร
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+                    </div>
+                    <div class="col-sm-1 "></div>
+                </div>
+
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q3">
+                        <p>
+                            ในกรณีที่คุณส่งข้อมูลดำเนินการมาให้เราเรียบร้อยแล้ว แต่ไม่มีจดหมายตอบกลับหรือธนาคารไม่รับทราบถึงการกู้ยืมเงิน โปรดติดต่อเรามาโดยตรงเพื่อที่เราจะสามารถแก้ไขปัญหาและดำเนินการกู้ยืมเงินต่อไปได้
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="FourthQuestion()">
+                        <p>
+                            4. เว็บไซต์มีการคิดค่าบริการย้อนหลังหรือไม่ และความปลอดภัยของการเก็บข้อมูลเป็นอย่างไร
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 "></div>
+                </div>
+
+
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q4">
+                        <p>
+                            เว็บไซต์ของเราไม่มีการคิดค่าบริการย้อนหลัง ในส่วนของข้อมูลต่าง ๆ ที่เก็บไว้นั้นมีการรักษาความปลอดภัยเป็นอย่างดี เพื่อไม่ให้ข้อมูลรั่วไหลไปได้
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+
+
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="FifthQuestion()">
+                        <p>
+                            5. สามารถเพิ่มข้อมูลธนาคารที่สนใจเพื่อใช้ในการคำนวณเงินกู้ได้หรือไม่
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-sm-1 "></div>
+                </div>
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q5">
+                        <p>
+                            ต้องขออภัยเป็นอย่างยิ่งที่ในขณะนี้เว็บไซต์ยังไม่สามารถเพิ่มธนาคารอื่นเพื่อการคำนวณเงินกู้ซื้อบ้านหรือกู้ซื้อบ้านผ่านทางเว็บไซต์ได้ แต่ในอนาคตอาจมีการเพิ่มธนาคารต่าง
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+
+
+
+                <div class="row question-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 question-text" onclick="SixthQuestion()">
+                        <p>
+                            6. ถ้าไม่สามารถดำเนินการคำนวณหรือการกู้ยืมได้ ต้องทำอย่างไร
+                            <img src="~/icons/down-arrow.png" class=" mx-auto d-block img-style">
+                        </p>
+                    </div>
+
+
+                    <div class="col-sm-1 "></div>
+                </div>
+
+
+                <div class="row answer-block">
+                    <div class="col-sm-1 "> </div>
+
+                    <div class="col-sm-10 answer-text" id="Q6">
+                        <p>
+                            ในกรณีที่กดคำนวณเงินหรือกดกู้ยืมเงินไม่ได้ กรุณาตรวจสอบจำนวณเงินและระยะเวลาในการกู้ยืม รวมถึงตรวจสอบข้อมูลของคุณว่าถูกต้องหรือไม่ แต่ถ้าข้อมูลถูกต้องแล้วยังเกิดปัญหาอยู่ โปรดติดต่อเรามาโดยตรงเพื่อให้เราดำเนินการแก้ปัญหาให้
+
+                        </p>
+                    </div>
+
+                    <div class="col-sm-1 img-style "> </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-1 block-2"></div>
+
+        </div>
+
+    </div>
+
+    <!--moreinfo-->
+    <div class="ask-contianer">
+        <div class=" container-color">
+            <div class="row body-container">
+
+
+                <div class="col-sm-2 ask-block2"> </div>
+                <div class="col-sm-8  ask-block">
+                    <p>สอบถามเพิ่มเติม</p>
+                    <form id="fillquestion" action="#" method="post" onsubmit=" return   ValidationEvent()">
+                        <input id="name" class="filltext" type="text" placeholder="ชื่อ" />
+                        <input id="email" class="filltext" type="text" placeholder="อีเมล์" />
+                        <textarea id="question" rows="10" cols="50" placeholder="คำถาม"></textarea><br />
+                        <button class="submit-btn" type="submit">ยืนยัน</button>
+
+                    </form>
+
+                </div>
+                <div class="col-sm-2 ask-block2"> </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>

@@ -1,0 +1,154 @@
+﻿
+
+.nav-block {
+    width: 100%;
+    height: 70px;
+}
+
+.con-infor-1 {
+    width: 100%;
+    height: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    background-color: #617179;
+}
+
+.txt-inpt-style {
+    padding-top: 10px;
+    font-family: Prompt;
+    font-size: 22px;
+    font-weight: 400;
+    color: #0C0D0F;
+}
+
+.title-infor {
+    font-family: Prompt;
+    font-size: 32px;
+    font-weight: 500;
+    color: #F2F2F2;
+}
+
+.line-infor {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+.content-infor {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+.con-input {
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.input-style-addr {
+    height: 200px;
+    width: 100%;
+    border: none;
+    background-color: #F2F2F2;
+    font-size: 16px;
+    color: #0C0D0F;
+    resize: none;
+}
+
+
+.input-style {
+    height: 60px;
+    width: 100%;
+    border: none;
+    background-color: #F2F2F2;
+    font-size: 20px;
+    color: #0C0D0F;
+    resize: none;
+}
+
+.infor {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.list-infor {
+    font-family: Prompt;
+    font-size: 22px;
+    font-weight: 500;
+    color: #F2F2F2;
+}
+
+.detail-infor {
+    width: 100%;
+    font-family: Prompt;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: end;
+    color: #F2F2F2;
+    fill: none;
+    background: transparent;
+    border: none;
+}
+
+.detail-infor2 {
+    font-family: Prompt;
+    font-size: 22px;
+    font-weight: 400;
+    color: #F2F2F2;
+    margin-bottom: 0;
+}
+
+.label-detail-infor {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.btn-infor-style {
+    width: 136px;
+    height: 61px;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #7293A6;
+    color: #F2F2F2;
+    border-radius: 30.5px;
+}
+
+form .form-infor div {
+    padding-top: 30px;
+    font-family: Prompt;
+    font-size: 24px;
+    font-weight: 400;
+    color: #293740;
+}
+
+.title-input {
+    font-family: Prompt;
+    font-size: 36px;
+    font-weight: 600;
+    color: #293740;
+}
+
+
+@media (max-width: 768px) {
+    .content-infor {
+        flex-direction: column;
+    }
+
+    .infor {
+        flex-direction: column;
+    }
+
+    .con-input {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Loan_Analyze</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/navbar-footer.css" />
+
+</head>
+<body>
+    <header class="position-fixed w-100 hd-z">
+        <nav class=" navbar navbar-expand-sm navbar-toggleable-sm  mb-0 navbar-dark navbar-style">
+            <div class="container ">
+                <a class="navbar-brand logo-navbar" asp-area="" asp-controller="Home" asp-action="Index">Loan Analyze</a>
+                <button class="navbar-toggler" style="outline:none; border:none;" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav  ml-auto manubar" id="menubar">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white " asp-area="" asp-controller="Loan" asp-action="Loan1p">Loans</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Aboutus">About us</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <script src="./js/navbar.js"></script>
+    </header>
+    <div class="">
+        <main role="main" class=" ">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer-style text-center pb-3">
+        <div class="h-auto">
+            <a class="logo-footer" asp-area="" asp-controller="Home" asp-action="Index">Loan Analyze</a>
+            <div class="list-all-footer">
+                <ul class="list-footer" id="">
+                    <li class="nav-footer ">
+                        <a class=" text-white " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-footer ">
+                        <a class=" text-white " asp-area="" asp-controller="Loan" asp-action="Loan1p">Loans</a>
+                    </li>
+                    <li class="nav-footer ">
+                        <a class=" text-white" asp-area="" asp-controller="Home" asp-action="Aboutus">About us</a>
+                    </li>
+                    <li class="nav-footer ">
+                        <a class=" text-white" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="text-center font-Prompt word-footer ">Created by Loan Analyze I ©2021 all right reserved.</div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+
+
+</html>

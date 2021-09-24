@@ -1,0 +1,92 @@
+﻿body {
+    font-family: 'Prompt';
+    background: url('/image/cal4bg.jpg') no-repeat center;
+    background-size: 100% 100%;
+    background-blend-mode: initial;
+}
+
+    body::after {
+        content: "";
+        background: white;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;
+    }
+
+.content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+.summary-block {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    background-color: rgba(242,242,242,0.8);
+    height: inherit;
+    padding-top: 10px;
+    text-align: center;
+    color: #293740;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+    .summary-block p {
+        margin: 5px 30px 5px 30px;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        font-weight: normal;
+        text-indent: 10px;
+        color: #293740;
+    }
+
+
+    .summary-block img {
+        margin: 10px;
+        filter: invert(62%) sepia(37%) saturate(280%) hue-rotate(158deg) brightness(84%) contrast(87%);
+        width: 120px;
+        height: auto;
+    }
+
+
+
+.side-block {
+    background-color: rgba(242,242,242,0);
+}
+
+
+
+/*button*/
+
+
+.button-block {
+    padding-top: 15px;
+    height: 50px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.btn-con:hover {
+    background-color: #253239;
+    transition-duration: 0.2s;
+}
+
+.button-block a {
+    text-align: center;
+    padding: 7px 25px 7px 25px;
+    width: auto;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #293740;
+    border-radius: 50px;
+    color: white;
+}

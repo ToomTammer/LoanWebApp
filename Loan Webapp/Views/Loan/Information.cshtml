@@ -1,0 +1,76 @@
+﻿@model Loan_Webapp.Models.Loan
+<link rel="stylesheet" href="~/css/information.css" />
+
+@{
+    ViewData["Title"] = "Information";
+}
+
+
+
+<section class="nav-block"></section>
+
+<form class="container content-infor" asp-action="Information" method="post">
+
+    <div class="con-infor-1">
+        <p class=" container text-center title-infor">ข้อมูลบ้าน</p>
+        <div class="infor">
+            <div class="list-infor"><p>ประเภทบ้านของคุณ :</p></div>
+            <label class="label-detail-infor" ><input asp-for="TypeHomeCustomer"   class="detail-infor"  value="@ViewBag.hometype" type="text" readonly placeholder="0" /></label>
+            <!-- <div class="detail-infor"><p>บ้านมือหนึ่ง</p></div> -->
+        </div>
+        <div class="infor">
+            <div class="list-infor"><p>ราคาบ้านของคุณ :</p></div>
+            <label class="label-detail-infor"><input asp-for="LoanCustomer" class="detail-infor"  value="@ViewBag.loancustomer" type="text" readonly placeholder="0" /><span class="detail-infor2 pl-2">บาท</span></label>
+
+
+        </div>
+        <div class="infor">
+            <div class="list-infor"><p>ผ่อนจ่ายจำนวน :</p></div>
+            <label class="label-detail-infor"><input asp-for="Numofmonths" class="detail-infor"   value="@ViewBag.numofmonth" type="text" readonly placeholder="0" /><span class="detail-infor2 pl-2">งวด</span></label>
+
+
+        </div>
+        <div class="infor">
+            <div class="list-infor"><p>เป็นเวลา :</p></div>
+            <label class="label-detail-infor"><input  asp-for="Numofyear"  class="detail-infor" value="@ViewBag.numofyrs" type="text" readonly placeholder="0" /><span class="detail-infor2 pl-2">ปี</span></label>
+
+        </div>
+        <div class="infor">
+            <div class="list-infor"><p>ธนาคารที่กู้ :</p></div>
+            <label class="label-detail-infor" ><input asp-for="BankCustomer" class="detail-infor"  value="@ViewBag.bnktype" type="text"  readonly placeholder="0" /></label>
+
+        </div>
+        <div class="infor">
+            <div class="line-infor"></div>
+        </div>
+
+    </div>
+
+    <div class="con-input">
+        <div class="">
+            <p class="title-input">กรุณากรอกข้อมูล</p>
+            <div class="form-infor" >
+                <div class="txt-inpt-style"><p>ชื่อ</p></div>
+                <input asp-for="NameUser" type="text"  class="input-style p-2" />
+                <span asp-validation-for="NameUser" class="text-danger font-Promp"></span>
+
+                <div class="txt-inpt-style"><p>เบอร์โทรศัพท์</p></div>
+                <input asp-for="NumberUser" type="text" class="input-style p-2" />
+                <span asp-validation-for="NumberUser" class="text-danger font-Promp"></span>
+
+                <div class="txt-inpt-style"><p>ที่อยู่ปัจจุบัน</p></div>
+                <textarea asp-for="Address" class="input-style-addr p-2"></textarea>
+                <span asp-validation-for="Address" class="text-danger font-Promp"></span>
+
+                <div class="d-flex justify-content-center pt-2">
+                    <input id="Submit1" type="submit" value="ยืนยัน" class="btn-infor-style" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</form>
+

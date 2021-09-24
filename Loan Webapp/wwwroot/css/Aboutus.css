@@ -1,0 +1,609 @@
+﻿body {
+    background: #FFFFFF;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/***************** Hero section **********************/
+
+
+.hero-section {
+    width: 100vw;
+    height: 80vh;
+    left: -1px;
+    top: 50px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../image/hero-banner.jpg') center fixed no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.container.d-flex.h-75 {
+    align-items: center;
+    justify-content: start;
+}
+
+.font-weight-bold.text-capitalize {
+    position: absolute;
+    color: #F2F2F2;
+    font-size: 70px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.member-list{
+    margin-top:70px;
+}
+
+@media (max-width:576px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .container.d-flex.h-75 {
+        margin-left: -80px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .font-weight-bold.text-capitalize {
+        font-size: 20px;
+    }
+}
+
+
+/* Hero section */
+
+/****************** Why us section *********************/
+
+.container.why-us {
+    margin-top: 40px;
+}
+
+.row.image-text-us {
+    display: flex;
+    align-items: center;
+}
+
+.col-sm-6.text-us h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 59px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.col-sm-6.text-us p {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+
+/*************** Bank Card section ***************/
+.bank-card-section {
+    height: 342px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-sm-3.card {
+    background: #F2F2F2;
+    border: none;
+}
+
+.card-img-top.krungthai {
+    width: 282px;
+    height: 147px;
+}
+
+.card-img-top.gsb {
+    width: 238px;
+    height: 77px;
+}
+
+.card-img-top.ttb {
+    width: 233px;
+    height: 123px;
+}
+
+/***************** Gallery Content *******************/
+.gallery {
+    background: url('../image/gallery-banner.SVG') center fixed no-repeat;
+    background-size: cover;
+    /*position: absolute;*/
+    width: 100vw;
+    height: 80vh;
+    left: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row.container.bg-white.my-md-5.mx-auto {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.col-sm-4.text h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 59px;
+    text-transform: capitalize;
+}
+
+.col-sm-4.text p {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+}
+
+
+/********************Who WE ARE**********************/
+.container.who-we {
+    height: 219px;
+    margin-top: 40px;
+}
+
+.col.who-we {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.col-sm-5.who-we h1 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+
+.col-sm-6.who-we p {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+}
+
+/********************Member list**********************/
+
+
+.row.image-text-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+.col-sm-5.text-list h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.col-sm-5.order-sm-1.text-list h4 {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 33px;
+    display: flex;
+    justify-content: end;
+    color: #7A7A7A;
+}
+
+.col-sm-5.order-sm-1.text-list h1, .col-sm-5.order-sm-1.text-list h4,
+.col-sm-5.order-sm-1.text-list p {
+    display: flex;
+    text-align: right;
+}
+
+.col-sm-5.text-list b {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    color: #7A7A7A;
+}
+
+.col-sm-5.text-list p {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+div.row.icon.list {
+    display: flex;
+    align-items: center;
+}
+
+div.row.icon.list2 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.img-fluid.fb {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.img-fluid.ig, .img-fluid.email {
+    margin-right: 10px;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+    .img-fluid.email:hover, .img-fluid.ig:hover, .img-fluid.fb:hover {
+        border: 6px solid #394d58;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+/********************gradient section**********************/
+
+.gradient-button {
+
+    width: 100vw;
+    height: 501px;
+    left: 0px;
+    background: linear-gradient(180deg, #FFFFFF 1.6%, #7293A6 54.66%, rgba(57, 77, 88, 0.8) 100%) center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-sm-5.gradient h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.col-sm-4.gradient p {
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.btn.btn-start {
+    border-radius: 40px;
+    background-color: #fff;
+    color: #000000;
+    width: 140px;
+    height: 50px;
+    font-size: 18px;
+    font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 36px;
+    border: 2px solid #fff;
+}
+
+    .btn.btn-start:hover {
+        background-color: transparent;
+        color: #fff;
+    }
+
+/********************Responsive**********************/
+
+@media (min-width:0px) and (max-width:575px) {
+    .container.why-us {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .bank-card-section {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .card-img-top.gsb {
+        margin: 33px;
+    }
+
+    .card-img-top.ttb {
+        margin: 10px;
+    }
+
+    .row.container.bg-white.my-md-5.mx-auto {
+        text-align: center;
+    }
+
+    div.col-sm-4.text h1 {
+        font-size: 30px;
+    }
+
+    div.col-sm-6.text-us h1 {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    div.col-sm-5.who-we h1 {
+        font-size: 30px;
+        margin-top: 100px;
+    }
+
+    .container.who-we {
+        margin-bottom: 120px;
+    }
+
+    .col-sm-5.order-sm-1.text-list h1, .col-sm-5.text-list h1 {
+        font-size: 30px;
+    }
+
+    .col-sm-5.gradient h1 {
+        font-size: 30px;
+    }
+
+    .container.row.align-items-center.justify-content-center {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:768px) and (min-width:376px) {
+    .container.why-us {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .col-sm-6.text-us h1 {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+
+    .col-sm-6.text-us p {
+        font-size: 16px;
+    }
+
+    .bank-card-section {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .card-img-top.gsb {
+        margin: 25px;
+        width: 208px;
+        height: 47px;
+    }
+
+    .card-img-top.ttb {
+        width: 183px;
+        height: 73px;
+    }
+
+    .card-img-top.krungthai {
+        width: 232px;
+        height: 97px;
+    }
+
+    .row.container.bg-white.my-md-5.mx-auto {
+        text-align: center;
+    }
+
+    .col-sm-4.text h1 {
+        font-size: 30px;
+    }
+
+    .row.align-items-center.justify-content-center {
+        margin-top: 200px;
+    }
+
+    .col-sm-5.gradient h1 {
+        font-size: 30px;
+    }
+
+    .container.row.align-items-center.justify-content-center {
+        margin-top: 0;
+    }
+
+    div.col-sm-5.who-we h1 {
+        font-size: 30px;
+        margin-top: -100px;
+    }
+
+    h1.text-center {
+        margin-top: 30px;
+    }
+
+    img.d-block.img-fluid {
+        height: 250px;
+        margin-left: 30px;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+    .container.why-us {
+        margin-top: 40px;
+    }
+
+    .font-weight-bold.text-capitalize {
+        font-size: 60px;
+    }
+
+    .row.align-items-center.justify-content-center {
+        margin-top: 40px;
+    }
+
+    .container.who-we {
+        margin-top: 40px;
+    }
+
+    .col-sm-5.order-sm-1.text-list h1, .col-sm-5.text-list h1 {
+        font-size: 30px;
+    }
+
+    .col-sm-5.order-sm-1.text-list p, .col-sm-5.text-list p {
+        font-size: 16px;
+    }
+
+    div.col-sm-5.who-we h1 {
+        margin-top: 0px;
+    }
+
+    .card-img-top.gsb {
+        width: 208px;
+        height: 47px;
+    }
+
+    .card-img-top.ttb {
+        width: 183px;
+        height: 73px;
+    }
+
+    .card-img-top.krungthai {
+        width: 242px;
+        height: 107px;
+    }
+}
+
+
+@media (max-width:1023px) and (min-width:993px) {
+    .card-img-top.krungthai {
+        width: 232px;
+        height: 97px;
+    }
+
+    div.col-sm-5.who-we h1 {
+        font-size: 30px;
+        margin-top: -300px;
+    }
+
+    div.col-sm-6.who-we p {
+        margin-top: -200px;
+    }
+
+    section.container.who-we {
+        margin-bottom: -100px;
+    }
+
+    .card-img-top.gsb {
+        width: 208px;
+        height: 47px;
+    }
+
+    .card-img-top.ttb {
+        width: 183px;
+        height: 73px;
+    }
+
+    .font-weight-bold.text-capitalize {
+        font-size: 50px;
+    }
+
+    .col-sm-5.gradient h1 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1025px) {
+    .container.why-us {
+        margin-top: 40px;
+    }
+
+    .col-sm-6.text-us h1 {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+
+    .col-sm-6.text-us p {
+        font-size: 16px;
+    }
+
+    .row.align-items-center.justify-content-center {
+        margin-top: 40px;
+    }
+
+    .container.row.align-items-center.justify-content-center {
+        margin-top: 0;
+    }
+
+    .col-sm-5.gradient h1 {
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (min-width:1025px) and (max-width:1100px) {
+    .container.why-us {
+        margin-top: 40px;
+    }
+
+    .col-sm-6.text-us h1 {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+
+    .col-sm-6.text-us p {
+        font-size: 16px;
+    }
+
+    .row.align-items-center.justify-content-center {
+        margin-top: 200px;
+    }
+
+    .container.row.align-items-center.justify-content-center {
+        margin-top: 0;
+    }
+
+    .col-sm-5.gradient h1 {
+        font-size: 30px;
+    }
+}

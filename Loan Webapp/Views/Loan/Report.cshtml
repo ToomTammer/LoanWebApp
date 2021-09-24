@@ -1,0 +1,198 @@
+﻿@model Loan_Webapp.Models.Loan
+
+@{
+    ViewData["Title"] = "Report";
+}
+
+<!--jumbotronใช้ในการทำให้หน้าจอเป็นreponsive-->
+<link rel="stylesheet" href="~/css/report.css" />
+
+
+<body>
+    <section class="nav-block"></section>
+    <div class="jumbotron-fluid text-center content">
+        <div class="row" style="margin-bottom:70px;">
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-10 container-style">
+
+                <div class="row head-block">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-8 result-head">
+                        <p> ผลรายงานการซื้อ</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+                <!--ข้อมูลส่วนตัว-->
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-8 detail-head">
+                        <p> ข้อมูลส่วนตัว</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p> ชื่อ:</p>
+                    </div>
+                    <div class="col-sm-6 detail-text">
+                        <p>@Html.DisplayFor(nm => nm.NameUser) </p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p> เบอร์โทร:</p>
+                    </div>
+                    <div class="col-sm-6 detail-text">
+                        <p>@Html.DisplayFor(ph => ph.NumberUser) </p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p> ที่อยู่:</p>
+                    </div>
+                    <div class="col-sm-6 detail-text">
+                        <p>@Html.DisplayFor(ad => ad.Address)</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-8 line"></div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+                <!--ข้อมูลซื้อบ้าน-->
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-8 detail-head">
+                        <p> ข้อมูลซื้อบ้าน</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block ">  </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p>ประเภทบ้านของคุณ :</p>
+                    </div>
+                    <div class="col-sm-2 detail-text">
+                        <p>@Html.DisplayFor(th => th.TypeHomeCustomer)</p>
+                    </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p>ราคาบ้านของคุณ : </p>
+                    </div>
+                    <div class="col-sm-2 detail-text ">
+                        <p>@Html.DisplayFor(lnc => lnc.LoanCustomer) บาท</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block ">  </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p>ผ่อนจ่ายจำนวน :</p>
+                    </div>
+                    <div class="col-sm-2 detail-text">
+                        <p>@Html.DisplayFor(mon => mon.Numofmonths) งวด</p>
+                    </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p>เป็นเวลา :</p>
+                    </div>
+                    <div class="col-sm-2 detail-text ">
+                        <p>@Html.DisplayFor(yrs => yrs.Numofyear) ปี</p>
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block ">  </div>
+                    <div class="col-sm-2 detail-subhead ">
+                        <p>ธนาคารที่กู้ :</p>
+                    </div>
+                    <div class="col-sm-2 detail-text">
+                        <p>@Html.DisplayFor(bk => bk.BankCustomer)</p>
+                    </div>
+                    <div class="col-sm-2 detail-subhead "> </div>
+                    <div class="col-sm-2 detail-text "></div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-8 line"></div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-1  "> </div>
+                    <div class="col-sm-6 side-block "> </div>
+                    <div class="col-sm-3 button-block">
+                        <a asp-action="Complete">ยืนยัน </a>
+
+                    </div>
+                    <div class="col-sm-1 side-block "> </div>
+                    <div class="col-sm-1  "> </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-sm-1 "></div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
