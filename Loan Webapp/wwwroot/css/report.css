@@ -142,6 +142,13 @@ body {
         color: white;
     }
 
+    .button-block a {
+        background-color: #182025;
+        transition-duration: 0.2s;
+    }
+
+
+
 
 @media screen and (max-width: 767px) and (min-width:576px) {
     body {

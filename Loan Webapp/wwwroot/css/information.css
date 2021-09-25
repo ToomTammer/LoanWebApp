@@ -123,6 +123,12 @@
     border-radius: 30.5px;
 }
 
+    .btn-infor-style:hover {
+        background-color: #394D58;
+        color: #F2F2F2;
+        transition-duration: 0.2s;
+    }
+
 form .form-infor div {
     padding-top: 30px;
     font-family: Prompt;
@@ -150,5 +156,9 @@ form .form-infor div {
 
     .con-input {
         padding-left: 0;
+    }
+
+    .detail-infor {
+        text-align: start;
     }
 }

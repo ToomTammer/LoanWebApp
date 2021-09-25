@@ -1,7 +1,7 @@
 ﻿body {
     font-family: 'Prompt';
     background: url('/image/cal4bg.jpg') no-repeat center;
-    background-size: 100% 100%;
+    background-size: cover;
     background-blend-mode: initial;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .btn-con:hover {
-    background-color: #253239;
+    background-color: #182025;
     transition-duration: 0.2s;
 }
 
