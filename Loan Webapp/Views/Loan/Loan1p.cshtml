@@ -7,8 +7,66 @@
 
     $(document).ready(function () {
 
+        $('.btn-house').each(function () {
+            var self = $(this)
+            $(this).click(function () {
+                window.localStorage.setItem('actbtn', $(this).val());
+                $('.btn-house').removeClass('active')
+                self.addClass('active');
+            });
+        });
+        if (window.localStorage.getItem('actbtn')) {
+            $('.btn-house').each(function () {
+                if ($(this).val() == window.localStorage.getItem('actbtn')) {
+                    $(this).click();
+                }
+            });
+        }
+
+        $('#Submit1, #Submit2').attr('disabled', 'disabled');
+        $('.ip').keyup(function () {
+
+            var empty = false;
+            $('.ip').each(function () {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#Submit1').attr('disabled', 'disabled');
+            } else {
+                $('#Submit1').removeAttr('disabled');
+            }
+        });
+
+
+        $('#result1').ready(function () {
+
+            var empty = false;
+            $('#result1').each(function () {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#Submit2').attr('disabled', 'disabled');
+            } else {
+                $('#Submit2').removeAttr('disabled');
+            }
+        });
+
+        
+        var selItem = sessionStorage.getItem("SelItem");
+        var selItem = "1";
+        $('select').val(selItem);
+
+
         $("select").on('change', function () {
             var mrr = this.value;
+
+            sessionStorage.setItem("SelItem", mrr);
 
             switch (mrr) {
                 case "1":
@@ -27,6 +85,37 @@
 
         });
 
+        if (selItem) {
+            switch (selItem) {
+                case "1":
+                    $('#interestbox').val("6.22");
+                    $('#bankbox').val("ธนาคารกรุงไทย");
+                    braek;
+                case "2":
+                    $('#interestbox').val("6.28");
+                    $('#bankbox').val("ธนาคารธนชาติ");
+                    braek;
+                case "3":
+                    $('#interestbox').val("6.245");
+                    $('#bankbox').val("ธนาคารออมสิน");
+                    braek;
+            }
+        }
+
+        $(".opbnk1").on('click', function () {
+            $('#interestbox').val("6.22");
+            $('#bankbox').val("ธนาคารกรุงไทย");
+        });
+        $(".opbnk2").on('click', function () {
+            $('#interestbox').val("6.28");
+            $('#bankbox').val("ธนาคารธนชาติ");
+        });
+        $(".opbnk3").on('click', function () {
+            $('#interestbox').val("6.245");
+            $('#bankbox').val("ธนาคารออมสิน");
+        });
+
+
         $("#btnh1").on('click', function () {
             var hm = this.value;
             $('#tyhmbox').val("บ้านมือหนึ่ง");
@@ -37,48 +126,20 @@
             $('#tyhmbox').val("บ้านมือสอง");
         });
 
-        $('#Submit1, #Submit2').attr('disabled', 'disabled');
-        $('.ip').keyup(function () {
-
-            var empty = false;
-            $('.ip').each(function () {
-                if ($(this).val() == '') {
-                    empty = true;
-                }
-            });
-
-            if (empty) {
-                $('#Submit1').attr('disabled', 'disabled');
-            } else {
-                $('#Submit1').removeAttr('disabled'); 
-            }
-        });
-
-        $('#result1').ready(function () {
-
-            var empty = false;
-            $('#result1').each(function () {
-                if ($(this).val() == '') {
-                    empty = true;
-                }
-            });
-
-            if (empty) {
-                $('#Submit2').attr('disabled', 'disabled');
-            } else {
-                $('#Submit2').removeAttr('disabled'); 
-            }
-        });
 
 
 
-        
- 
+
+
 
 
     });
 
-    
+
+
+
+
+
 </script>
 
 <section class="nav-block"></section>
@@ -91,7 +152,7 @@
 
                 <p class="select-house mt-1">เลือกประเภทสินเชื่อบ้านของคุณ</p>
 
-                <form asp-controller="Loan" asp-action="Calculate" method="post" id="form1" >
+                <form asp-controller="Loan" asp-action="Calculate" method="post" id="form1">
                     <button id="btnh1" value="1" type="button" class="col-sm-5 btn btn-house mb-5 active">
                         <img class="icon-house" src="~/image/first-hand-house.svg" />บ้านมือหนึ่ง
                     </button>
@@ -100,41 +161,44 @@
                     </button>
 
                     <div class="dnone">
-                         <input id="tyhmbox" type="text" class="col-6 d-flex result dnone " value="บ้านมือหนึ่ง" readonly  name="hometype"/>
+                        <input id="tyhmbox" type="text" class="col-6 d-flex result " value="บ้านมือหนึ่ง" readonly name="hometype" />
                     </div>
-                   
+
 
                     <div class="form-group mb-4">
-                        <label  for="formGroupHead">วงเงินที่ต้องการขอกู้ (บาท)</label>
-                        <span  class="text-danger"></span>
-                        <input   class="form-control form-control-lg ip " id="formGroupHead " type="number" placeholder="บาท " name="loan" 
+                        <label for="formGroupHead">วงเงินที่ต้องการขอกู้ (บาท)</label>
+                        <span class="text-danger"></span>
+                        <input class="form-control form-control-lg ip " id="formGroupHead " type="number" placeholder="บาท " value="@ViewBag.loancustomerin" name="loan"
                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                maxlength = "9" />
+                               maxlength="9" />
                         <span style="opacity:70%;">*สูงสุดไม่ควรเกิน 35,000,000 บาท</span>
 
                     </div>
                     <div class="form-group mb-4">
-                        <label  for="formGroupHead2">ระยะเวลาที่ต้องการผ่อน (ปี)</label>
-                        <span  class="text-danger"></span>
-                        <input  class="form-control form-control-lg ip" id="formGroupHead2" type="number" placeholder="ปี" name="numyr" 
+                        <label for="formGroupHead2">ระยะเวลาที่ต้องการผ่อน (ปี)</label>
+                        <span class="text-danger"></span>
+                        <input class="form-control form-control-lg ip" id="formGroupHead2" type="number" placeholder="ปี" value="@ViewBag.numofyrs" name="numyr"
                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                maxlength = "2"/>
+                               maxlength="2" />
                         <span style="opacity:70%;">*สูงสุดไม่ควรเกิน 30 ปี</span>
                     </div>
                     <div class="row mb-4">
                         <div class="form-group col-sm-8">
                             <label for="formGroupHead3">อัตราดอกเบี้ยธนาคาร</label>
                             <select class="form-control form-control-lg">
-                                <option value="1" id="ktb">ธนาคารกรุงไทย</option>
-                                <option value="2" id="td">ธนาคารธนชาติ</option>
-                                <option value="3" id="sb">ธนาคารออมสิน</option>
+                                <option value="1">ธนาคารกรุงไทย</option>
+                                <option value="2">ธนาคารธนชาติ</option>
+                                <option value="3">ธนาคารออมสิน</option>
                             </select>
 
 
                             <div class="dnone">
-                                <input id="bankbox" type="text" class="col-6 d-flex result  " value="ธนาคารกรุงไทย" readonly name="bnktype" />
+                                <button class="opbnk1" type="button">1</button>
+                                <button class="opbnk2" type="button">2</button>
+                                <button class="opbnk3" type="button">3</button>
+                                <input id="bankbox" type="text" class="col-6 d-flex result" value="ธนาคารกรุงไทย" readonly name="bnktype" />
                             </div>
-                           
+
 
                         </div>
                         <div class="col-sm-4 mb-4">
@@ -143,7 +207,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" id="Submit1" class="col-sm-5 btn btn-cal" href="#" >
+                    <button type="submit" id="Submit1" class="col-sm-5 btn btn-cal" href="#">
                         เริ่มคำนวณ
                     </button>
                 </form>
@@ -162,7 +226,7 @@
                         <div class="col-5 sub-head">ยอดผ่อนชำระต่อเดือน </div>
                         <div class="w-100"></div>
                         <!-- <div class="col-6 d-flex result">@ViewBag.CalculationResult</div> -->
-                        <input  type="text" class="col-6 d-flex result" value="@ViewBag.CalculationResult" readonly placeholder="0" id="result1"  />
+                        <input type="text" class="col-6 d-flex result" value="@ViewBag.CalculationResult" readonly placeholder="0" id="result1" />
                         <div class="col-1 sub-head line">บาท</div>
                     </div>
 
@@ -175,39 +239,11 @@
 
                     </div>
                     <!------------------------------------------------------>
-                    <div class="row total-result mb-4 " >
-                        <div class="col-5 sub-head">ประเภทบ้าน</div>
-                        <div class="w-100"></div>
+                    <div class=" dnone">
                         <input name="tyhmresult" type="text" class="col-5 d-flex result-sub " value="@ViewBag.hometype" readonly placeholder="-" />
-
-
-                    </div>
-
-                    <div class="row total-result mb-4">
-                        <div class="col-5 sub-head">จำนวนเงินที่กู้</div>
-                        <div class="w-100"></div>
                         <input name="Loancusresult" type="text" class="col-5 d-flex result-sub" value="@ViewBag.loancustomer" readonly placeholder="0" />
-                        <div class="col-1 sub-head ">บาท</div>
-
-
-                    </div>
-
-                    <div class="row total-result mb-4">
-                        <div class="col-5 sub-head">จำนวนปี</div>
-                        <div class="w-100"></div>
-                        <input  type="text" name="yrsresult" class="col-5 d-flex result-sub" value="@ViewBag.numofyrs" readonly placeholder="0" />
-                        <div class="col-1 sub-head ">ปี</div>
-
-                    </div>
-
-                    <div class="row total-result mb-5">
-                        <div class="col-5 sub-head">ธนาคารที่กู้</div>
-                        <div class="w-100"></div>
-                        <!--<div class="col-6 d-flex result">@ViewBag.numofmonth</div> -->
+                        <input type="text" name="yrsresult" class="col-5 d-flex result-sub" value="@ViewBag.numofyrs" readonly placeholder="0" />
                         <input id="tyhmbox" name="bankresult" type="text" class="col-5 d-flex result-sub" value="@ViewBag.bnktype" readonly placeholder="-" />
-
-
-
                     </div>
 
 
@@ -228,7 +264,7 @@
                             ** อัตราดอกเบี้ยที่นำมาใช้คำนวณสินเชื่อบ้านของแต่ละสถาบันการเงินในที่นี้ เป็นอัตราดอกเบี้ยชนิด MRR ของแต่ละธนาคาร โดยไม่ได้อ้างอิงส่วนลด
                         </div>
                     </div>
-                    <button  type="submit" id="Submit2"  class="col-sm-5 btn btn-confirm btnconfirm" >
+                    <button type="submit" id="Submit2" class="col-sm-5 btn btn-confirm btnconfirm">
                         ยืนยันสินเชื่อ
                     </button>
                     <!--<a asp-action="Loan1p" type="submit" id="Submit1" value="nax" name="btnloan" class="col-sm-5 btn btn-confirm">ยืนยันสินเชื่อ</a> -->
@@ -237,16 +273,5 @@
 
         </div>
     </section>
-    <script>
-        var header = document.getElementById("btn-active");
-        var btns = header.getElementsByClassName("btn-house");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
 
-    </script>
 </body>

@@ -39,7 +39,8 @@ namespace Loan_Webapp.Controllers
                 ViewBag.CalculationResult = string.Format("{0:n}", ResultLoan);
                 ViewBag.numofmonth = numberofmonths.ToString();
                 ViewBag.numofyrs = n2.ToString();
-                ViewBag.loancustomer = string.Format("{0:n}", n1);
+                ViewBag.loancustomer = string.Format("{0:n0}", n1);
+                ViewBag.loancustomerin =  n1;
                 ViewBag.hometype = hm;
                 ViewBag.bnktype = bnk;
 
