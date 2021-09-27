@@ -43,8 +43,9 @@ namespace Loan_Webapp.Controllers
                 ViewBag.loancustomerin =  n1;
                 ViewBag.hometype = hm;
                 ViewBag.bnktype = bnk;
+                ViewBag.interest = n3;
 
-            
+
 
 
             return View("Loan1p");

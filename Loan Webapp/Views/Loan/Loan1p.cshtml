@@ -7,6 +7,11 @@
 
     $(document).ready(function () {
 
+        var selItem = sessionStorage.getItem("SelItem");
+        $('select').val(selItem);
+
+
+        /// button house
         $('.btn-house').each(function () {
             var self = $(this)
             $(this).click(function () {
@@ -23,11 +28,24 @@
             });
         }
 
+
+        $("#btnh1").on('click', function () {
+            var hm = this.value;
+            $('#tyhmbox').val("บ้านมือหนึ่ง");
+        })
+
+        $("#btnh2").on('click', function () {
+            var hm = this.value;
+            $('#tyhmbox').val("บ้านมือสอง");
+        })
+
+
+        ////active submit
         $('#Submit1, #Submit2').attr('disabled', 'disabled');
         $('.ip').keyup(function () {
 
             var empty = false;
-            $('.ip').each(function () {
+            $('.ip').each(function () {  
                 if ($(this).val() == '') {
                     empty = true;
                 }
@@ -38,12 +56,13 @@
             } else {
                 $('#Submit1').removeAttr('disabled');
             }
-        });
+        })
 
 
         $('#result1').ready(function () {
 
             var empty = false;
+            var selstart = "1";
             $('#result1').each(function () {
                 if ($(this).val() == '') {
                     empty = true;
@@ -55,17 +74,11 @@
             } else {
                 $('#Submit2').removeAttr('disabled');
             }
-        });
+        })
 
-        
-        var selItem = sessionStorage.getItem("SelItem");
-        var selItem = "1";
-        $('select').val(selItem);
-
-
+        ///dropdown 
         $("select").on('change', function () {
             var mrr = this.value;
-
             sessionStorage.setItem("SelItem", mrr);
 
             switch (mrr) {
@@ -81,57 +94,38 @@
                     $('#interestbox').val("6.245");
                     $('#bankbox').val("ธนาคารออมสิน");
                     braek;
+                default:
+
             }
 
         });
-
-        if (selItem) {
-            switch (selItem) {
-                case "1":
-                    $('#interestbox').val("6.22");
-                    $('#bankbox').val("ธนาคารกรุงไทย");
-                    braek;
-                case "2":
-                    $('#interestbox').val("6.28");
-                    $('#bankbox').val("ธนาคารธนชาติ");
-                    braek;
-                case "3":
-                    $('#interestbox').val("6.245");
-                    $('#bankbox').val("ธนาคารออมสิน");
-                    braek;
-            }
-        }
 
         $(".opbnk1").on('click', function () {
             $('#interestbox').val("6.22");
             $('#bankbox').val("ธนาคารกรุงไทย");
-        });
+        })
+
         $(".opbnk2").on('click', function () {
             $('#interestbox').val("6.28");
             $('#bankbox').val("ธนาคารธนชาติ");
-        });
+        })
+
         $(".opbnk3").on('click', function () {
             $('#interestbox').val("6.245");
             $('#bankbox').val("ธนาคารออมสิน");
-        });
+        })
 
 
-        $("#btnh1").on('click', function () {
-            var hm = this.value;
-            $('#tyhmbox').val("บ้านมือหนึ่ง");
-        });
-
-        $("#btnh2").on('click', function () {
-            var hm = this.value;
-            $('#tyhmbox').val("บ้านมือสอง");
-        });
+        if (sessionStorage.getItem("SelItem")) {
+            $('.btbnk').each(function () {
+                if ($(this).val() == window.sessionStorage.getItem("SelItem")) {
+                    $(this).click();
+                }
+            });
+        }
 
 
-
-
-
-
-
+   
 
     });
 
@@ -193,17 +187,17 @@
 
 
                             <div class="dnone">
-                                <button class="opbnk1" type="button">1</button>
-                                <button class="opbnk2" type="button">2</button>
-                                <button class="opbnk3" type="button">3</button>
-                                <input id="bankbox" type="text" class="col-6 d-flex result" value="ธนาคารกรุงไทย" readonly name="bnktype" />
+                                <button class="opbnk1 btbnk" value="1" type="button">1</button>
+                                <button class="opbnk2 btbnk" value="2" type="button">2</button>
+                                <button class="opbnk3 btbnk" value="3" type="button">3</button>
+                                <input id="bankbox" type="text" class="col-6 d-flex result" value="" readonly name="bnktype" />
                             </div>
 
 
                         </div>
                         <div class="col-sm-4 mb-4">
                             <label for="formGroupHead4">ดอกเบี้ย(%)</label>
-                            <input id="interestbox" type="text" class="form-control form-control-lg" placeholder="%" value="6.22" name="interest" readonly />
+                            <input id="interestbox" type="text" class="form-control form-control-lg" placeholder="%" value="0" name="interest" readonly />
                         </div>
                     </div>
 
@@ -244,6 +238,7 @@
                         <input name="Loancusresult" type="text" class="col-5 d-flex result-sub" value="@ViewBag.loancustomer" readonly placeholder="0" />
                         <input type="text" name="yrsresult" class="col-5 d-flex result-sub" value="@ViewBag.numofyrs" readonly placeholder="0" />
                         <input id="tyhmbox" name="bankresult" type="text" class="col-5 d-flex result-sub" value="@ViewBag.bnktype" readonly placeholder="-" />
+                        <input id="tyhmbox" name="interresult" type="text" class="col-5 d-flex result-sub" value="@ViewBag.interest" readonly placeholder="-" />
                     </div>
 
 
